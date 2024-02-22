@@ -15,6 +15,7 @@ metadata:
   name: weave-gitops
   namespace: flux-system
 spec:
+  serviceAccountName: kustomize-controller  
   interval: 60m
   chart:
     spec:
