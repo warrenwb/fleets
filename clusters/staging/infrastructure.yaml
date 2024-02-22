@@ -37,6 +37,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
+  serviceAccountName: kustomize-controller
   retryInterval: 1m
   timeout: 5m
   sourceRef:
