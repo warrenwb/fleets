@@ -16,8 +16,6 @@ metadata:
   name: weave-gitops
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: kyverno-policies
   serviceAccountName: kustomize-controller
   interval: 60m
   chart:
