@@ -29,6 +29,10 @@ spec:
             url: "https://github.com/warrenwb/?*" # repositories in fluxcd via https
         - spec:
             url: "ssh://git@github.com:warrenwb/?*" # repositories in fluxcd via ssh
+        - spec:
+            url: "https://github.com/dmyerscough/?*" # repositories in fluxcd via https
+        - spec:
+            url: "ssh://git@github.com:dmyerscough/?*" # repositories in fluxcd via ssh
         # - spec:
         #     url: "https://github.com/fluxcd/?*" # repositories in fluxcd via https
         # - spec:
