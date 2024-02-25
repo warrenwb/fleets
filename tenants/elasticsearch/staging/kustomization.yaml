@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: elasticsearch-app
+namespace: elasticsearch
 resources:
   - ../../base/elasticsearch
 patches:
