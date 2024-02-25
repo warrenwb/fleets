@@ -4,4 +4,4 @@ metadata:
   name: elasticsearch
   namespace: apps
 spec:
-  path: ./staging
+  path: ./elasticsearch/staging
