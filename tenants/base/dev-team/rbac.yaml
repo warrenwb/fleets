@@ -20,7 +20,7 @@ metadata:
   labels:
     toolkit.fluxcd.io/tenant: dev-team
   name: gotk-reconciler
-  namespace: apps
+  # namespace: apps
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

@@ -20,7 +20,7 @@ metadata:
   labels:
     toolkit.fluxcd.io/tenant: elasticsearch
   name: elasticsearch-reconciler
-  namespace: elasticsearch
+  # namespace: elasticsearch
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
