@@ -1,11 +1,24 @@
----
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: elasticsearch
-  namespace: elasticsearch
+  name: dev-team
+  namespace: apps
 spec:
-  interval: 1m0s
-  ref:
-    branch: main
+  interval: 1m
   url: https://github.com/warrenwb/apps
+  ref:
+    branch: refactoring-folder-structure
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dev-team
+  namespace: apps
+spec:
+  serviceAccountName: dev-team
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: dev-team
+  path: ./podinfo-one
+  prune: true
