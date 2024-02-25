@@ -20,7 +20,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: dev-team
-    path: ./archive
+  path: ./archive
   prune: true
 
 # ...

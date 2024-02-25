@@ -20,7 +20,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: elasticsearch
-    path: ./elasticsearch
+  path: ./elasticsearch
   prune: true
 
 # ...
