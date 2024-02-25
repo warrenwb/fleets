@@ -30,6 +30,6 @@ roleRef:
 subjects:
 - kind: User
   name: gotk:apps:reconciler
+  namespace: apps
 - kind: ServiceAccount
   name: dev-team
-  namespace: apps

@@ -31,4 +31,3 @@ subjects:
   name: gotk:elasticsearch:reconciler
 - kind: ServiceAccount
   name: elasticsearch
-  namespace: elasticsearch
