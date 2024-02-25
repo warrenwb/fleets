@@ -8,7 +8,6 @@ spec:
   url: https://github.com/warrenwb/apps
   ref:
     branch: refactoring-folder-structure
-  targetNamespace: elasticsearch
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
