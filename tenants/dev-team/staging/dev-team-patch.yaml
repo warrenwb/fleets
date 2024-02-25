@@ -6,3 +6,4 @@ metadata:
 spec:
   serviceAccountName: dev-team
   path: ./archive/staging
+  targetNamespace: apps

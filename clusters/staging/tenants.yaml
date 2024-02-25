@@ -13,6 +13,7 @@ spec:
     name: flux-system
   path: ./tenants/dev-team/staging
   prune: true
+  targetNamespace: apps
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -29,3 +30,4 @@ spec:
     name: flux-system
   path: ./tenants/elasticsearch/staging
   prune: true
+  targetNamespace: elasticsearch

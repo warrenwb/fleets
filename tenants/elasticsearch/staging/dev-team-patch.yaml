@@ -6,3 +6,4 @@ metadata:
 spec:
   serviceAccountName: elasticsearch
   path: ./elasticsearch/staging
+  targetNamespace: elasticsearch
