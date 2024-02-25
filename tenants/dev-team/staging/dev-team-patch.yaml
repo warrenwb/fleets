@@ -4,5 +4,5 @@ metadata:
   name: dev-team
   namespace: apps
 spec:
-  serviceAccountName: kustomize-controller
+  serviceAccountName: dev-team
   path: ./archive/staging

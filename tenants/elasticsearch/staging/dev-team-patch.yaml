@@ -4,5 +4,5 @@ metadata:
   name: elasticsearch
   namespace: elasticsearch
 spec:
-  serviceAccountName: kustomize-controller
+  serviceAccountName: elasticsearch
   path: ./elasticsearch/staging
