@@ -3,70 +3,32 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
-    toolkit.fluxcd.io/tenant: elasticsearch-team
-  name: elasticsearch-app
-
+    toolkit.fluxcd.io/tenant: elasticsearch
+  name: elasticsearch
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    toolkit.fluxcd.io/tenant: elasticsearch-team
-  name: elasticsearch-team
-  namespace: elasticsearch-app
-
+    toolkit.fluxcd.io/tenant: elasticsearch
+  name: elasticsearch
+  namespace: elasticsearch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   labels:
-    toolkit.fluxcd.io/tenant: elasticsearch-team
-  name: gotk-reconciler
-  namespace: elasticsearch-app
+    toolkit.fluxcd.io/tenant: elasticsearch
+  name: elasticsearch-reconciler
+  namespace: elasticsearch
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- kind: User
-  name: gotk:apps:reconciler
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: gotk:elasticsearch:reconciler
 - kind: ServiceAccount
-  name: elasticsearch-team
-  namespace: elasticsearch-app
-
-
-# ---
-# apiVersion: v1
-# kind: Namespace
-# metadata:
-#   labels:
-#     toolkit.fluxcd.io/tenant: elasticsearch
-#   name: apps
-
-# ---
-# apiVersion: v1
-# kind: ServiceAccount
-# metadata:
-#   labels:
-#     toolkit.fluxcd.io/tenant: elasticsearch
-#   name: elasticsearch
-#   namespace: apps
-
-# ---
-# apiVersion: rbac.authorization.k8s.io/v1
-# kind: RoleBinding
-# metadata:
-#   labels:
-#     toolkit.fluxcd.io/tenant: elasticsearch
-#   name: gotk-reconciler
-#   namespace: apps
-# roleRef:
-#   apiGroup: rbac.authorization.k8s.io
-#   kind: ClusterRole
-#   name: cluster-admin
-# subjects:
-# - kind: User
-#   name: gotk:apps:reconciler
-# - kind: ServiceAccount
-#   name: dev-team
-#   namespace: apps
+  name: elasticsearch
+  namespace: elasticsearch

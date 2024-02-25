@@ -1,34 +1,14 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: elasticsearch
-namespace: elasticsearch-app
-spec:
-  interval: 1m
-  url: https://github.com/warrenwb/apps
-  ref:
-    branch: refactoring-folder-structure
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: elasticsearch
-namespace: elasticsearch-app
+  namespace: elasticsearch
 spec:
+  interval: 1m0s
+  path: ./elasticsearch
+  prune: false
   serviceAccountName: elasticsearch
-  interval: 5m
   sourceRef:
     kind: GitRepository
     name: elasticsearch
-  # path: ./elasticsearch
-  prune: true
-
-# ...
-# spec:
-#   sourceRef:
-#     kind: GitRepository
-#     name: dev-team
-#   path: "./kustomize" => this will be added by the .staging or .productiomn oiverlYS
-#   prune: true
-
-
