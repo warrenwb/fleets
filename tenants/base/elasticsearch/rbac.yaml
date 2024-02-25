@@ -31,5 +31,5 @@ subjects:
 - kind: User
   name: gotk:apps:reconciler
 - kind: ServiceAccount
-  name: elasticsearch
+  name: dev-team
   namespace: apps
