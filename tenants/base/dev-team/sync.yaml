@@ -20,6 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: dev-team
-  path: ./podinfo-one
+  path: ./archive
   prune: true
   targetNamespace: apps
