@@ -45,6 +45,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./tenants/elasticsearch-templates/staging
+  path: ./tenants/elasticsearch-templates/tenants
   prune: true
   targetNamespace: elasticsearch-templates
