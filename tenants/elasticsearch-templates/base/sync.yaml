@@ -1,0 +1,25 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: elasticsearch-templates-gitrepo
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/warrenwb/apps
+  ref:
+    branch: refactoring-folder-structure
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: elasticsearch-templates-kustomization
+  namespace: flux-system
+spec:
+  serviceAccountName: elasticsearch-templates-sa
+  interval: 5m
+  sourceRef:
+    kind: GitRepository
+    name: elasticsearch-templates-gitrepo
+  path: ./elasticsearch-templates
+  prune: true
+  targetNamespace: elasticsearch-templates
