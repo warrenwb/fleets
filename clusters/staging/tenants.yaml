@@ -47,4 +47,4 @@ spec:
     name: flux-system
   path: ./tenants/elasticsearch-templates/staging
   prune: true
-  targetNamespace: elasticsearch
+  targetNamespace: elasticsearch-templates
