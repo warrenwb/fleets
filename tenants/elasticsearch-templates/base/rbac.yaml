@@ -28,6 +28,6 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: User
-  name: gotk:elasticsearch-templates:reconciler
+  name: gotk:elasticsearch-templates-sa:reconciler
 - kind: ServiceAccount
   name: elasticsearch-templates-sa
