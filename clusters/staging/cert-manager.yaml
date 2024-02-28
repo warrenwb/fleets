@@ -21,6 +21,7 @@ metadata:
   name: cert-manager
   namespace: cert-manager
 spec:
+  serviceAccountName: kustomize-controller
   interval: 30m
   chart:
     spec:
