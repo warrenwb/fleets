@@ -15,22 +15,21 @@ metadata:
   namespace: elasticsearch-templates
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   labels:
     toolkit.fluxcd.io/tenant: elasticsearch-templates
-  name: elasticsearch-templates-reconciler
-  namespace: elasticsearch-templates
+  name: es-templates-clusterbinding
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
+  apiGroup: ""
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- apiGroup: rbac.authorization.k8s.io
+- apiGroup: ""
   kind: User
   name: gotk:elasticsearch-templates:reconciler
 - kind: ServiceAccount
-  name: elasticsearch-templates-sa
+  name: es-templates-sa
 - kind: ServiceAccount
   name: phenix-operator-system-sa
   namespace: elastic-phenix-operator-system

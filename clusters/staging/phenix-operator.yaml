@@ -11,16 +11,15 @@ metadata:
   namespace: elastic-phenix-operator-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
-  name: phenix-reconciler
-  namespace: elastic-phenix-operator-system
+  name: phenix-clusterbinding
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
+  apiGroup: ""
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- apiGroup: rbac.authorization.k8s.io
+- apiGroup: ""
   kind: User
   name: gotk:phenix:reconciler
 - kind: ServiceAccount
