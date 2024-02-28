@@ -17,6 +17,8 @@ metadata:
   name: phenix-operator-crds
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cert-manager
   serviceAccountName: kustomize-controller
   interval: 5m
   sourceRef:
