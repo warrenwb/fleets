@@ -1,3 +1,9 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: elastic-phenix-operator-system
+---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
@@ -24,3 +30,4 @@ spec:
     name: elasticsearch-operators
   path: ./elasticsearch/operators/phenix-operator
   prune: true
+  targetNamespace: elastic-phenix-operator-system
