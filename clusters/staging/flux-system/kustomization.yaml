@@ -7,14 +7,14 @@ patches:
   - patch: |
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --no-cross-namespace-refs=true
+        value: --no-cross-namespace-refs=false
     target:
       kind: Deployment
       name: "(kustomize-controller|helm-controller|notification-controller|image-reflector-controller|image-automation-controller)"
   - patch: |
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --no-remote-bases=true
+        value: --no-remote-bases=false
     target:
       kind: Deployment
       name: "kustomize-controller"
