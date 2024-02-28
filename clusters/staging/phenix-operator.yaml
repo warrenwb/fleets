@@ -22,8 +22,10 @@ subjects:
 - apiGroup: ""
   kind: User
   name: gotk:phenix:reconciler
+  namespace: elastic-phenix-operator-system
 - kind: ServiceAccount
   name: phenix-operator-system-sa
+  namespace: elastic-phenix-operator-system
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
