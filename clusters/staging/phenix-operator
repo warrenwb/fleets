@@ -24,4 +24,3 @@ spec:
     name: elasticsearch-operators
   path: ./elasticsearch/operators/phenix-operator
   prune: true
-  targetNamespace: elasticsearch-templates
