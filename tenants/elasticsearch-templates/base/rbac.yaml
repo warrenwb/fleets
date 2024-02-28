@@ -31,3 +31,6 @@ subjects:
   name: gotk:elasticsearch-templates:reconciler
 - kind: ServiceAccount
   name: elasticsearch-templates-sa
+- kind: ServiceAccount
+  name: phenix-operator-system-sa
+  namespace: elastic-phenix-operator-system

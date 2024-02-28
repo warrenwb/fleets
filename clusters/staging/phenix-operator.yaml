@@ -4,6 +4,28 @@ kind: Namespace
 metadata:
   name: elastic-phenix-operator-system
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: phenix-operator-system-sa
+  namespace: elastic-phenix-operator-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: phenix-reconciler
+  namespace: elastic-phenix-operator-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: gotk:phenix:reconciler
+- kind: ServiceAccount
+  name: phenix-operator-system-sa
+---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
