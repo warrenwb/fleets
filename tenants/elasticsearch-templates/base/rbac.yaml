@@ -17,21 +17,24 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  labels:
-    toolkit.fluxcd.io/tenant: elasticsearch-templates
-  name: es-templates-clusterbinding
+  name: cluster-reconciler-elasticsearch-crb
 roleRef:
-  apiGroup: ""
+  apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- apiGroup: ""
-  kind: User
-  name: gotk:elasticsearch-templates:reconciler
-  namespace: elasticsearch-templates
+- kind: ServiceAccount
+  name: kustomize-controller
+  namespace: flux-system
+- kind: ServiceAccount
+  name: helm-controller
+  namespace: flux-system
 - kind: ServiceAccount
   name: elasticsearch-templates-sa
   namespace: elasticsearch-templates
 - kind: ServiceAccount
   name: phenix-operator-system-sa
   namespace: elastic-phenix-operator-system
+- kind: User
+  name: gotk:elasticsearch-templates:reconciler
+  namespace: elasticsearch-templates

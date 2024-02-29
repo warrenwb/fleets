@@ -13,16 +13,26 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: phenix-clusterbinding
+  name: cluster-reconciler-phenix-crb
 roleRef:
-  apiGroup: ""
+  apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: cluster-admin
 subjects:
 - kind: ServiceAccount
+  name: kustomize-controller
+  namespace: flux-system
+- kind: ServiceAccount
+  name: helm-controller
+  namespace: flux-system
+- kind: ServiceAccount
+  name: elasticsearch-templates-sa
+  namespace: elasticsearch-templates
+- kind: ServiceAccount
   name: phenix-operator-system-sa
   namespace: elastic-phenix-operator-system
-  apiGroup: ""
+
+
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
@@ -34,6 +44,7 @@ spec:
   url: https://github.com/warrenwb/apps
   ref:
     branch: refactoring-folder-structure
+
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -51,3 +62,4 @@ spec:
   path: ./elasticsearch/operators/phenix-operator
   prune: true
   targetNamespace: elastic-phenix-operator-system
+
