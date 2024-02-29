@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dev-team-tenant
+  name: services-tenant
   namespace: flux-system
 spec:
   dependsOn:
@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./tenants/dev-team/staging
+  path: ./tenants/services/staging
   prune: true
   targetNamespace: apps
 ---

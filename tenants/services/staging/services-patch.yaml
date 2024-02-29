@@ -1,9 +1,9 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dev-team
-  namespace: flux-system
+  name: services
+  namespace: services
 spec:
-  serviceAccountName: dev-team
+  serviceAccountName: services-sa
   path: ./archive/staging
-  targetNamespace: apps
+  targetNamespace: services

@@ -51,7 +51,7 @@ spec:
   # dependsOn:
   #   - name: cert-manager
   serviceAccountName: kustomize-controller
-  interval: 5m
+  interval: 1m
   sourceRef:
     kind: GitRepository
     name: elasticsearch-operators

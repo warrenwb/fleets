@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: dev-team
+  name: services-gitrepo
   namespace: flux-system
 spec:
   interval: 1m
@@ -12,14 +12,14 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dev-team
+  name: services
   namespace: flux-system
 spec:
-  serviceAccountName: dev-team
+  serviceAccountName: services-sa
   interval: 5m
   sourceRef:
     kind: GitRepository
-    name: dev-team
+    name: services-gitrepo
   path: ./archive
   prune: true
-  targetNamespace: apps
+  targetNamespace: services
