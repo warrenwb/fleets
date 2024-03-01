@@ -16,4 +16,4 @@ spec:
     image:
       tag: alpine3.18
   interval: 1m
-  # targetNamespace: elasticsearch
+  targetNamespace: elasticsearch
