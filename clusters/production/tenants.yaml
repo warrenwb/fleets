@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dev-team
+  name: services
   namespace: flux-system
 spec:
   dependsOn:
@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./dev-team/production
+  path: ./services/production
   prune: true
   targetNamespace: apps
 ---
