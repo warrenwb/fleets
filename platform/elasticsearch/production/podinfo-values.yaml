@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: elasticsearch
+  namespace: elasticsearch
+spec:
+  serviceAccountName: elasticsearch
+  chart:
+    spec:
+    version: ">=1.0.0"
+  values:
+    replicaCount: 2
+  targetNamespace: elasticsearch

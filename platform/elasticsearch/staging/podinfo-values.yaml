@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: elasticsearch-helmrelease
+  namespace: elasticsearch
+spec:
+  serviceAccountName: elasticsearch
+  releaseName: elasticsearch-release
+  chart:
+    spec:
+      version: ">=1.0.0-alpha"
+  values:
+    replicaCount: 1
+    image:
+      repository: nginx
+      pullPolicy: IfNotPresent
+  # targetNamespace: elasticsearch

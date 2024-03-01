@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: elasticsearch-helmrelease
+  namespace: elasticsearch
+spec:
+  serviceAccountName: elasticsearch
+  releaseName: elasticsearch-release
+  chart:
+    spec:
+      chart: elasticsearch/charts/elasticsearch # folder path + chart name 
+      sourceRef:
+        kind: GitRepository
+        name: elasticsearch-gitrepo
+  values:
+    image:
+      tag: alpine3.18
+  interval: 1m
+  # targetNamespace: elasticsearch

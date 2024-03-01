@@ -1,0 +1,15 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: elasticsearch-gitrepo
+  namespace: elasticsearch
+spec:
+  interval: 1m
+  url: https://github.com/warrenwb/apps
+  ref:
+    branch: refactoring-folder-structure
+  ignore: |-
+    # exclude all
+    /*
+    # include charts directory
+    !/elasticsearch/charts/*
