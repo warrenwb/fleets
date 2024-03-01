@@ -2,9 +2,9 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: elasticsearch-helmrelease
-  namespace: elasticsearch
+  namespace: flux-system
 spec:
-  serviceAccountName: elasticsearch
+  serviceAccountName: kustomize-controller
   releaseName: elasticsearch-release
   chart:
     spec:
