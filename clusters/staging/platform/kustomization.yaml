@@ -4,5 +4,5 @@ namespace: flux-system
 components:
   - ../../_profiles/_staging
 resources:
-  - infrastructure.yaml
+  # - infrastructure.yaml
   - tenants.yaml
